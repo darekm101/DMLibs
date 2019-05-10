@@ -12,9 +12,9 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'dm-libs'
+NAME = 'DMLibs'
 DESCRIPTION = 'Various libs I wrote or enhanced which I use all the time.'
-URL = 'https://github.com/darekm101/dm-libs'
+URL = 'https://github.com/darekm101/DMLibs'
 EMAIL = 'darekm101@gmail.com'
 AUTHOR = 'darekm101'
 REQUIRES_PYTHON = '>=3.6.0'
