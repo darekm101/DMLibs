@@ -31,7 +31,7 @@ class InfluxLibs:
         self.password = self.config['influx']['password']
         self.dbname = self.config['influx']['dbname'] 
 
-    def get_client_connection(self):
+    def get_client(self):
     
         self.client = InfluxDBClient(self.host, self.port, self.user, self.password, self.dbname)
         return self.client
