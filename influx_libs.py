@@ -33,8 +33,8 @@ class InfluxLibs:
 
     def get_client(self):
     
-        self.client = InfluxDBClient(self.host, self.port, self.user, self.password, self.dbname)
-        return self.client
+        client = InfluxDBClient(self.host, self.port, self.user, self.password, self.dbname)
+        return client
 
     def format_infuxdb(self, measurement_name, json, tags):
 
@@ -69,7 +69,7 @@ class InfluxLibs:
 if __name__ == "__main__":
 
     influx_libs = InfluxLibs()
-    influx_client = influx_libs.get_client_connection()
+    influx_client = influx_libs.get_client()
 
     data_dict = {'timestamp': '2019-05-02T11:29:22.2422', 'account': '111111', 'http': 'POST', 'url': 'mobile_settings', 'response_time': 0.04998}
     influx_libs.format_infuxdb('mobile_api', data_dict, tags=['http', 'url'])
