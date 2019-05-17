@@ -18,6 +18,10 @@ class InfluxLibs:
 
         self.read_config()
         self.set_parameters()
+
+        self.stats = {}
+        self.stats['total_writes'] = 0
+        
         
 
     def read_config(self):
@@ -63,6 +67,7 @@ class InfluxLibs:
 
     def write(self, json_body):
         if self.DEBUG: print(f"DEBUG: WebleyInflux.write: json_body={json_body}")
+        self.stats['total_writes'] += 1
         return self.client.write_points(json_body)
 
 
