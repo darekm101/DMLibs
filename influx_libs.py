@@ -8,7 +8,7 @@ have to hard code passwords in code. By default it's in ./etc/influxdb.ini
 import configparser
 from influxdb import InfluxDBClient
 
-influx_config_file = "./etc/influxdb.ini"
+influx_config_file = "/etc/DMLibs/influxdb.ini"
 
 class InfluxLibs: 
 
@@ -48,9 +48,12 @@ class InfluxLibs:
         ready to call write to DB.
         """
 
+        timestamp = json.pop('timestamp')
+        
+
         json_body = [
             { 
-                "time": json.pop('timestamp'),
+                "time": timestamp,
                 "measurement": measurement_name,
                 "tags": {},
                 "fields": {}
